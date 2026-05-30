@@ -1,22 +1,22 @@
 name: Deploy Portfolio
 
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+      - main
 
 permissions:
-contents: read
-pages: write
-id-token: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
 group: pages
 cancel-in-progress: true
 
 jobs:
-build:
-runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
 
 steps:
@@ -53,4 +53,3 @@ steps:
   - name: Deploy to GitHub Pages
     id: deployment
     uses: actions/deploy-pages@v4
-```
