@@ -2,47 +2,106 @@ import { Link } from "react-router-dom";
 
 const projects = [
   {
-    title:"Smart ATS",
-    route:"/projects/ats"
+    title: "Smart Biodigester",
+    image: "/biodigester.jpg",
+    route: "/projects/biodigester",
+    tech: ["ESP32", "IoT", "PCB"]
   },
 
   {
-    title:"Smart Biodigester",
-    route:"/projects/biodigester"
+    title: "FPGA Matrix Accelerator",
+    image: "/fpga.jpg",
+    route: "/projects/fpga",
+    tech: ["Verilog", "FPGA", "AI"]
   },
 
   {
-    title:"FPGA Accelerator",
-    route:"/projects/fpga"
+    title: "Automatic Transfer Switch",
+    image: "/ats.jpg",
+    route: "/projects/ats",
+    tech: ["ESP32", "Power Electronics"]
   },
 
   {
-    title:"Prosthetic Hand",
-    route:"/projects/prosthetic"
+    title: "Portable Emissions Tracer",
+    image: "/pet.jpg",
+    route: "/projects/emissions",
+    tech: ["Wireless", "Sensors"]
+  },
+
+  {
+    title: "MyoWare Prosthetic Hand",
+    image: "/prosthetic.jpg",
+    route: "/projects/prosthetic",
+    tech: ["EMG", "Robotics"]
+  },
+
+  {
+    title: "Robotic Sprayer",
+    image: "/robotics.jpg",
+    route: "/projects/robotics",
+    tech: ["PLC", "Automation"]
+  },
+
+  {
+    title: "Access Control System",
+    image: "/access.jpg",
+    route: "/projects/access-control",
+    tech: ["Embedded", "Security"]
   }
 ];
 
 export default function ProjectsSlider() {
-
   return (
     <section id="projects">
 
-      <h2>Projects</h2>
+      <h2 className="section-title">
+        Featured Projects
+      </h2>
 
-      <div className="slider-track">
+      <div className="slider-container">
 
-        {projects.map((p)=>(
+        <div className="slider-track">
 
-          <Link
-            key={p.title}
-            to={p.route}
-            className="project-card"
-          >
-            <h3>{p.title}</h3>
-            <p>Click to view details</p>
-          </Link>
+          {[...projects, ...projects].map((project, index) => (
 
-        ))}
+            <Link
+              key={index}
+              to={project.route}
+              className="project-card"
+            >
+
+              <img
+                src={project.image}
+                alt={project.title}
+              />
+
+              <div className="project-overlay">
+
+                <h3>{project.title}</h3>
+
+                <div className="tag-container">
+
+                  {project.tech.map((tag) => (
+
+                    <span
+                      key={tag}
+                      className="tag"
+                    >
+                      {tag}
+                    </span>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+            </Link>
+
+          ))}
+
+        </div>
 
       </div>
 
