@@ -111,14 +111,69 @@ function App() {
       </section>
 
       
-    {/* PROJECTS SECTION */}
-    <section className="py-24 overflow-hidden">
+  
+{/* PROJECTS SECTION */}
+<section className="py-24 overflow-hidden">
 
-      <h2 className="text-5xl font-bold text-center mb-16">
-        Featured Projects
-      </h2>
+  <h2 className="text-5xl font-bold text-center mb-16">
+    Featured Projects
+  </h2>
 
-      <div className="relative overflow-hidden">
+  <div className="relative overflow-hidden">
+
+    {/* SLIDER */}
+    <div className="slider-track">
+
+      {[...projects, ...projects].map((project, index) => (
+        <div
+          key={index}
+          className="project-card"
+        >
+
+          {/* IMAGE */}
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-56 w-full object-cover"
+          />
+
+          <div className="p-6">
+
+            <h3 className="text-2xl font-bold mb-4">
+              {project.title}
+            </h3>
+
+            <p className="text-gray-300 leading-relaxed mb-6">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((item, idx) => (
+                <span
+                  key={idx}
+                  className="bg-cyan-400/20 text-cyan-300 px-3 py-1 rounded-full text-sm"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      ))}
+
+    </div>
+
+    {/* LEFT FADE */}
+    <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-black to-transparent z-10"></div>
+
+    {/* RIGHT FADE */}
+    <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+  </div>
+
+</section>
+
 
         {/* SLIDER */}
         <div className="slider-track">
