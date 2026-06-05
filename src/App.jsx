@@ -70,7 +70,7 @@ function App() {
         <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
           Electrical Engineering Student specializing in Embedded Systems,
           FPGA Acceleration, Intelligent Energy Systems, PCB Design,
-          and AI Hardware Architectures.
+          and AI Hardware Architectures. For real!
         </p>
 
         <div className="flex gap-4 mt-10 flex-wrap justify-center">
