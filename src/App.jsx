@@ -35,7 +35,25 @@ function App() {
       
      
     {/* ANIMATED BACKGROUND */}
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+    
+{/* ANIMATED BACKGROUND */}
+<div className="fixed inset-0 -z-10 overflow-hidden">
+
+  {/* BLUE GLOW */}
+  <div className="absolute top-[-10%] left-[-10%] w-[700px] h-[700px] bg-cyan-500/30 rounded-full blur-[140px] animate-pulse"></div>
+
+  {/* PURPLE GLOW */}
+  <div className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] bg-purple-600/30 rounded-full blur-[140px] animate-pulse"></div>
+
+  {/* CENTER GLOW */}
+  <div className="absolute top-[30%] left-[35%] w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+
+  {/* GRID OVERLAY */}
+  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+
+</div>
+
+
 
       {/* BLUE GLOW */}
       <div className="absolute top-[-10%] left-[-10%] w-[700px] h-[700px] bg-cyan-500/30 rounded-full blur-[140px] animate-pulse"></div>
