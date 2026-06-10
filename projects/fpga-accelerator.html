@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FPGA Matrix Accelerator — Yvan Bota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">YB<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects-section">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../images/Yvan_Resume.pdf" target="_blank" class="nav-cta">Resume ↗</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="detail-hero">
+    <!--
+      REPLACE: Change src to your actual project banner image.
+      Recommended: a screenshot of your Vivado block design, waveform, or board photo.
+      Save it as: ../images/fpga_hero.jpg  (or .png)
+    -->
+    <img src="../images/fpga_hero.jpg" alt="FPGA Accelerator" class="detail-hero-bg"
+         onerror="this.style.display='none'">
+    <div class="detail-hero-gradient"></div>
+    <div class="detail-hero-content">
+      <a href="../index.html#projects-section" class="detail-back">← Back to Projects</a>
+      <div class="detail-tags">
+        <span class="detail-tag">FPGA</span>
+        <span class="detail-tag">HLS / Verilog</span>
+        <span class="detail-tag">AI Hardware</span>
+        <span class="detail-tag">Xilinx Vivado</span>
+      </div>
+      <h1 class="detail-title">FPGA-Based Matrix<br>Multiplication Accelerator</h1>
+      <p class="detail-subtitle mono">AI Hardware Project · Jan 2026 – May 2026 · KSU ECE</p>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="detail-body">
+
+    <div class="detail-specs">
+      <div class="spec-item">
+        <p class="spec-label">Matrix Size</p>
+        <p class="spec-value">32 × 32</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Design Flow</p>
+        <p class="spec-value">HLS → RTL → Bitstream</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Optimization</p>
+        <p class="spec-value">Pipelining + Loop Unrolling</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Resources Analyzed</p>
+        <p class="spec-value">LUTs · DSPs · BRAM</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Focus</p>
+        <p class="spec-value">Throughput vs. Power</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Goal</p>
+        <p class="spec-value">Energy-Efficient AI HW</p>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>Project Overview</h3>
+      <p>
+        This project implements a <strong>32×32 integer/fixed-point matrix multiplication accelerator</strong> on
+        an FPGA using High-Level Synthesis (HLS). The design targets energy-efficient compute architectures
+        relevant to AI inference workloads — the kind of hardware that powers neural network layers at the edge.
+      </p>
+      <p>
+        The accelerator was synthesized using Xilinx Vitis HLS and analyzed in Vivado for resource utilization
+        and power consumption, exploring the fundamental trade-off between throughput (II, latency) and
+        hardware resources (LUTs, DSPs, BRAM).
+      </p>
+    </div>
+
+    <div class="detail-section">
+      <h3>Design Approach</h3>
+      <ul>
+        <li><strong>HLS Directives:</strong> Applied <code>#pragma HLS PIPELINE</code> and <code>#pragma HLS UNROLL</code>
+          to the inner loop, achieving an initiation interval (II) of 1 for the innermost computation.</li>
+        <li><strong>Memory Architecture:</strong> Input matrices are partitioned into on-chip BRAMs using
+          array partitioning pragmas to maximize parallel memory access.</li>
+        <li><strong>DSP Inference:</strong> Multiply-accumulate operations are mapped to dedicated DSP48 slices
+          for area and power efficiency.</li>
+        <li><strong>Throughput vs. Resource Analysis:</strong> Multiple synthesis configurations were compared,
+          plotting throughput (GOPS) against LUT and DSP count to identify the Pareto-optimal design point.</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h3>Project Images</h3>
+      <div class="detail-img-grid">
+        <!--
+          HOW TO ADD IMAGES:
+          1. Save your images into the  images/  folder at the root of your repository.
+          2. Replace each src below with the correct filename.
+          3. The onerror fallback will hide the broken image and show the placeholder.
+
+          Recommended images for this project:
+          - images/fpga_vivado_blockdesign.png  → Vivado block design screenshot
+          - images/fpga_hls_report.png          → HLS synthesis report / resource table
+          - images/fpga_waveform.png            → Simulation waveform showing output
+          - images/fpga_board.jpg               → Physical FPGA board photo (optional)
+        -->
+        <div class="detail-img-frame">
+          <img src="../images/fpga_vivado_blockdesign.png" alt="Vivado Block Design"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="detail-img-placeholder">
+            <span>🖥️</span>
+            <p>Save as: <code>images/fpga_vivado_blockdesign.png</code></p>
+            <p>Vivado block design screenshot</p>
+          </div>
+        </div>
+        <div class="detail-img-frame">
+          <img src="../images/fpga_hls_report.png" alt="HLS Report"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="detail-img-placeholder">
+            <span>📊</span>
+            <p>Save as: <code>images/fpga_hls_report.png</code></p>
+            <p>HLS synthesis / resource report</p>
+          </div>
+        </div>
+        <div class="detail-img-frame">
+          <img src="../images/fpga_waveform.png" alt="Simulation Waveform"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="detail-img-placeholder">
+            <span>📈</span>
+            <p>Save as: <code>images/fpga_waveform.png</code></p>
+            <p>Simulation waveform output</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>Key Results</h3>
+      <ul>
+        <li>Achieved <strong>II = 1</strong> for the innermost loop after applying pipeline and unroll directives.</li>
+        <li>Demonstrated clear trade-off curves between LUT utilization and throughput across 4 synthesis configurations.</li>
+        <li>Characterized power at different clock frequencies, demonstrating feasibility for edge AI deployment.</li>
+        <li>Validated functional correctness via co-simulation comparing HLS output against a software reference.</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h3>Tools &amp; Technologies</h3>
+      <div class="about-tags">
+        <span>Xilinx Vitis HLS</span><span>Vivado Design Suite</span><span>Verilog RTL</span>
+        <span>C++ HLS</span><span>DSP48 Slices</span><span>BRAM Partitioning</span>
+        <span>Testbench Co-Simulation</span><span>FPGA Power Analysis</span>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>What I Learned</h3>
+      <p>
+        This project gave me hands-on experience with the full HLS-to-bitstream design flow —
+        from C++ algorithm to synthesized hardware. I gained intuition for how loop transformations
+        translate to hardware resource usage, and why the DSP/BRAM balance matters for real AI
+        inference workloads. This directly maps to roles doing FPGA-based AI acceleration,
+        which is my primary career target.
+      </p>
+    </div>
+
+    <div style="margin-top:3rem; padding-top:2rem; border-top: 1px solid var(--border); display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="../index.html#projects-section" class="btn-ghost">← All Projects</a>
+      <a href="../projects/myoware-hand.html" class="btn-primary">Next Project →</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">YB<span class="dot">.</span></span>
+      <span class="mono footer-copy">© 2026 Yvan Bota</span>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 50));
+  </script>
+</body>
+</html>
