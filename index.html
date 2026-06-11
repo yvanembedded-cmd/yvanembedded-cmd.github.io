@@ -1,58 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>smart-ats — Yvan Bota</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yvan Bota — Hardware Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body> 
+
+  <!-- ═══ NAVBAR ═══ -->
   <nav class="navbar">
     <div class="nav-logo">YB<span class="dot">.</span></div>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../index.html#projects-section">Projects</a></li>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects-section">Projects</a></li>
+      <li><a href="#skills-section">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="../images/Yvan_Resume.pdf" target="_blank" class="nav-cta">Resume ↗</a>
+    <a href="https://github.com/yvanembedded-cmd/yvanembedded-cmd.github.io/blob/main/images/Yvan_Resume.pdf" target="_blank" class="nav-cta">Resume ↗</a>
+    <button class="hamburger" id="hamburger">☰</button>
   </nav>
-  <div class="detail-hero">
-    <img src="../images/smart-ats_hero.jpg" alt="smart-ats" class="detail-hero-bg" onerror="this.style.display='none'">
-    <div class="detail-hero-gradient"></div>
-    <div class="detail-hero-content">
-      <a href="../index.html#projects-section" class="detail-back">← Back to Projects</a>
-      <h1 class="detail-title">See resume for<br>project details</h1>
-      <p class="detail-subtitle mono">Fill in this page with your project content — template ready</p>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-scanlines"></div>
+    <canvas id="circuit-canvas"></canvas>
+
+    <div class="hero-content">
+      <p class="hero-label mono">MS · Electrical &amp; Computer Engineering</p>
+      <h1 class="hero-title">
+        <span class="line1">YVAN</span>
+        <span class="line2">BOTA</span>
+      </h1>
+      <p class="hero-subtitle">FPGA Architect &amp; Embedded Systems Engineer</p>
+      <p class="hero-desc">
+        Designing the hardware that makes intelligence possible —<br>
+        from custom silicon accelerators to intelligent power systems.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects-section" class="btn-primary">Explore Projects</a>
+        <a href="#about" class="btn-ghost">About Me</a>
+      </div>
     </div>
-  </div>
-  <div class="detail-body">
-    <p style="color:var(--accent);font-family:var(--font-mono);font-size:0.8rem;margin-bottom:2rem;">
-      // TEMPLATE PAGE — Replace content below with your project details
-    </p>
-    <div class="detail-section">
-      <h3>Project Overview</h3>
-      <p style="color:var(--text-muted);">Add your project overview here. Describe what you built, why it matters, and the problem it solves.</p>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Hardware Projects</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">4.0</span><span class="stat-label">MS GPA</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">FE</span><span class="stat-label">Certified EE</span></div>
     </div>
-    <div class="detail-section">
-      <h3>Project Images</h3>
-      <div class="detail-img-grid">
-        <div class="detail-img-frame">
-          <div class="detail-img-placeholder"><span>📷</span><p>Save as: <code>images/smart-ats_1.jpg</code></p><p>Add your first project photo</p></div>
+
+    <div class="scroll-indicator">
+      <span class="mono">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-image-col">
+        <div class="about-img-frame">
+          <!-- REPLACE: swap src with your actual photo path, e.g. images/yvan_photo.jpg -->
+          <img src="images/profile.jpg" alt="Yvan Bota" class="about-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+       <!--   <div class="about-img-placeholder">
+            <span>📷</span>
+            <p class="mono">profile.jpg</p>
+            <p>Place your photo in<br><code>images/profile.jpg</code></p>
+          </div> -->
+          <div class="about-img-badge">KSU · ECE</div>
         </div>
-        <div class="detail-img-frame">
-          <div class="detail-img-placeholder"><span>📷</span><p>Save as: <code>images/smart-ats_2.jpg</code></p><p>Add your second project photo</p></div>
+      </div>
+      <div class="about-text-col">
+        <p class="section-label mono">// WHO I AM</p>
+        <h2 class="section-title">Engineer at the<br>Hardware–Silicon Boundary</h2>
+        <p class="about-body">
+          I'm Yvan Bota, an MS student in Electrical &amp; Computer Engineering at Kennesaw State University,
+          building toward a career in <strong>FPGA architecture and acceleration</strong>. My work spans
+          custom PCB design, embedded firmware, power electronics, and AI hardware — everything that lives below the software stack.
+        </p>
+        <p class="about-body">
+          I've conducted research at the <strong>Air Force Research Laboratory (AFRL)</strong> on solid-state battery systems,
+          built award-winning IoT platforms, and designed 32×32 matrix accelerators in HLS. Currently pursuing
+          remote FPGA engineering roles post-graduation.
+        </p>
+        <div class="about-tags">
+          <span>FPGA / HLS</span><span>Embedded C/C++</span><span>PCB Design</span>
+          <span>MATLAB / Simulink</span><span>Power Electronics</span><span>AI Hardware</span>
+        </div>
+        <div class="about-links">
+          <a href="https://github.com/yvanembedded-cmd" target="_blank" class="about-link">GitHub ↗</a>
+          <a href="https://linkedin.com/in/maestro-yvan" target="_blank" class="about-link">LinkedIn ↗</a>
+          <a href="https://meritpages.com/Yvan-Brillant" target="_blank" class="about-link">MeritPages ↗</a>
         </div>
       </div>
     </div>
-    <div class="detail-section">
-      <h3>Tools &amp; Technologies</h3>
-      <div class="about-tags"><span>Add your tools here</span><span>Technology 2</span><span>Technology 3</span></div>
+  </section>
+
+  <!-- ═══ FEATURED (Hero Project) ═══ -->
+  <section class="featured-section">
+    <div class="featured-label mono">// FEATURED PROJECT</div>
+    <div class="featured-card">
+      <!-- REPLACE: src="images/fpga_hero.jpg" with a banner image of your FPGA project -->
+      <img src="images/fpga_hero.png" alt="FPGA Accelerator" class="featured-bg"
+           onerror="this.style.display='none'">
+      <div class="featured-gradient"></div>
+      <div class="featured-content">
+        <span class="featured-badge">AI Hardware · FPGA</span>
+        <h2 class="featured-title">FPGA-Based Matrix<br>Multiplication Accelerator</h2>
+        <p class="featured-desc">32×32 HLS-based accelerator optimized via pipelining and loop unrolling — analyzing throughput vs. resource (LUTs, DSPs, BRAM) / power trade-offs to emulate energy-efficient compute architectures.</p>
+        <a href="projects/fpga-accelerator.html" class="btn-primary">View Project</a>
+      </div>
     </div>
-    <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
-      <a href="../index.html#projects-section" class="btn-ghost">← All Projects</a>
+  </section>
+
+  <!-- ═══ PROJECTS NETFLIX CAROUSEL ═══ -->
+  <section class="projects-section" id="projects-section">
+    <div class="projects-header">
+      <p class="section-label mono">// PROJECT CATALOG</p>
+      <h2 class="section-title">All Projects</h2>
     </div>
-  </div>
-  <footer class="footer"><div class="footer-inner"><span class="footer-logo">YB<span class="dot">.</span></span><span class="mono footer-copy">© 2026 Yvan Bota</span></div></footer>
-  <script>const n=document.querySelector('.navbar');window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>50));</script>
+
+    <!-- ROW 1 — Completed Projects -->
+    <div class="row-label mono">Completed Builds</div>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" onclick="scrollRow(this, -1)">‹</button>
+      <div class="carousel-track" id="track-1">
+
+        <a href="projects/fpga-accelerator.html" class="project-card">
+          <!-- REPLACE: images/proj_fpga.jpg -->
+          <img src="images/proj_fpga.jpg" alt="FPGA" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="card-img-placeholder"><span>🔲</span><p class="mono">proj_fpga.jpg</p></div>
+          <div class="card-overlay">
+            <span class="card-tag">FPGA · HLS</span>
+            <h3 class="card-title">FPGA Matrix<br>Accelerator</h3>
+            <p class="card-date mono">Jan–May 2026</p>
+            <p class="card-desc">32×32 HLS pipelined accelerator with LUT/DSP/BRAM resource analysis.</p>
+            <span class="card-cta">View Details →</span>
+          </div>
+        </a>
+
+        <a href="projects/myoware-hand.html" class="project-card">
+          <!-- REPLACE: images/proj_myoware.jpg -->
+          <img src="images/proj_myoware.png" alt="MyoWare" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+         <!-- <div class="card-img-placeholder"><span>🦾</span><p class="mono">proj_myoware.jpg</p></div> -->
+          <div class="card-overlay">
+            <span class="card-tag">Embedded · EMG</span>
+            <h3 class="card-title">MyoWare Prosthetic<br>Hand 5-DOF</h3>
+            <p class="card-date mono">Jan–May 2026</p>
+            <p class="card-desc">EMG-controlled prosthetic achieving 5-DOF finger motion via embedded actuation.</p>
+            <span class="card-cta">View Details →</span>
+          </div>
+        </a>
+
+        <a href="projects/emissions-tracer.html" class="project-card">
+          <!-- REPLACE: images/proj_emissions.jpg -->
+          <img src="images/proj_emissions.jpg" alt="Emissions Tracer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="card-img-placeholder"><span>🌫️</span><p class="mono">proj_emissions.jpg</p></div>
+          <div class="card-overlay">
+            <span class="card-tag">IoT · Award Winner</span>
+            <h3 class="card-title">Portable Emissions<br>Tracer</h3>
+            <p class="card-date mono">Aug–Dec 2025</p>
+            <p class="card-desc">NCUR Expo — Robin &amp; Doug Shore Entrepreneurship Award. 8–10hr wireless logging.</p>
+            <span class="card-cta">View Details →</span>
+          </div>
+        </a>
+
+        <a href="projects/smart-ats.html" class="project-card">
+          <!-- REPLACE: images/proj_ats.jpg -->
+          <img src="images/proj_ats.png" alt="ATS" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <!--    <div class="card-img-placeholder"><span>⚡</span><p class="mono">proj_ats.jpg</p></div> -->
+          <div class="card-overlay">
+            <span class="card-tag">Power Electronics</span>
+            <h3 class="card-title">Smart Automatic<br>Transfer Switch</h3>
+            <p class="card-date mono">Jan–Jun 2024</p>
+            <p class="card-desc">Voltage-sensed power transfer with threshold-based switching under dynamic supply conditions.</p>
+            <span class="card-cta">View Details →</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/yvanembedded-cmd/yvanembedded-cmd.github.io/blob/main/projects/biodigester.html" class="project-card">
+          <!-- REPLACE: images/proj_biodigester.jpg -->
+          <img src="images/proj_biodigester.jpg" alt="Biodigester" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <!--  <div class="card-img-placeholder"><span>🌱</span><p class="mono">proj_biodigester.jpg</p></div>  -->
+          <div class="card-overlay">
+            <span class="card-tag">IoT · 1st Place</span>
+            <h3 class="card-title">Smart Biodigester<br>System</h3>
+            <p class="card-date mono">Jan–Jul 2024</p>
+            <p class="card-desc">Science &amp; Tech Competition winner. CH₄/temp/pH/humidity IoT monitoring platform.</p>
+            <span class="card-cta">View Details →</span>
+          </div>
+        </a>
+
+        <a href="projects/wireless-access.html" class="project-card">
+          <!-- REPLACE: images/proj_wireless.jpg -->
+          <img src="images/proj_wireless.jpg" alt="Wireless Access" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="card-img-placeholder"><span>🔐</span><p class="mono">proj_wireless.jpg</p></div>
+          <div class="card-overlay">
+            <span class="card-tag">PCB · Control · 1st Place</span>
+            <h3 class="card-title">Wireless Access<br>Control System</h3>
+            <p class="card-date mono">Jan–Jul 2024</p>
+            <p class="card-desc">KFokam Conference 1st Place. Sensors + relay switching + remote notification.</p>
+            <span class="card-cta">View Details →</span>
+          </div>
+        </a>
+
+        <a href="projects/robotic-sprayer.html" class="project-card">
+          <!-- REPLACE: images/proj_sprayer.jpg -->
+          <img src="images/proj_sprayer.png" alt="Robotic Sprayer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+    <!--      <div class="card-img-placeholder"><span>🤖</span><p class="mono">proj_sprayer.png</p></div>  -->
+          <div class="card-overlay">
+            <span class="card-tag">PLC · Automation</span>
+            <h3 class="card-title">Robotic Sprayer<br>System</h3>
+            <p class="card-date mono">Jan–May 2025</p>
+            <p class="card-desc">Allen Bradley PLC Ladder Logic for marine engine conveyor-sprayer system.</p>
+            <span class="card-cta">View Details →</span>
+          </div>
+        </a>
+
+      </div>
+      <button class="carousel-btn next" onclick="scrollRow(this, 1)">›</button>
+    </div>
+
+  
+    <!-- ROW 2 — Upcoming / Recommended Projects 
+    <div class="row-label mono" style="margin-top:3rem;">
+      Recommended Next — FPGA Career Track
+      <span class="row-badge">Proposed Builds</span>
+    </div>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" onclick="scrollRow(this, -1)">‹</button>
+      <div class="carousel-track" id="track-2">
+
+        <a href="projects/upcoming-softcpu.html" class="project-card upcoming">
+          <div class="card-img-placeholder upcoming-placeholder"><span>🧠</span><p class="mono">Soft-CPU Core</p></div>
+          <div class="card-overlay">
+            <span class="card-tag upcoming-tag">Proposed · FPGA</span>
+            <h3 class="card-title">RISC-V Soft-CPU<br>on FPGA</h3>
+            <p class="card-desc">Implement a 5-stage pipelined RISC-V core in Verilog on Xilinx/Intel FPGA. Add AXI4-Lite peripheral interface.</p>
+            <span class="card-cta upcoming-cta">In Progress →</span>
+          </div>
+        </a>
+
+        <a href="projects/upcoming-cnn.html" class="project-card upcoming">
+          <div class="card-img-placeholder upcoming-placeholder"><span>🔬</span><p class="mono">CNN Accelerator</p></div>
+          <div class="card-overlay">
+            <span class="card-tag upcoming-tag">Proposed · AI HW</span>
+            <h3 class="card-title">CNN Inference<br>Accelerator (HLS)</h3>
+            <p class="card-desc">HLS-based convolutional layer accelerator targeting Zynq SoC. Benchmark vs ARM baseline on CIFAR-10.</p>
+            <span class="card-cta upcoming-cta">Planned →</span>
+          </div>
+        </a>
+
+        <a href="projects/upcoming-bms.html" class="project-card upcoming">
+          <div class="card-img-placeholder upcoming-placeholder"><span>🔋</span><p class="mono">BMS FPGA</p></div>
+          <div class="card-overlay">
+            <span class="card-tag upcoming-tag">Proposed · Energy</span>
+            <h3 class="card-title">FPGA-Based Battery<br>Management System</h3>
+            <p class="card-desc">Real-time BMS on FPGA with SOC estimation. Connects to your AFRL battery research and Simulink models.</p>
+            <span class="card-cta upcoming-cta">Planned →</span>
+          </div>
+        </a>
+
+        <a href="projects/upcoming-axi-dma.html" class="project-card upcoming">
+          <div class="card-img-placeholder upcoming-placeholder"><span>📡</span><p class="mono">AXI DMA</p></div>
+          <div class="card-overlay">
+            <span class="card-tag upcoming-tag">Proposed · FPGA</span>
+            <h3 class="card-title">AXI DMA Custom<br>IP Core</h3>
+            <p class="card-desc">Design and verify a custom AXI4 DMA IP core. Write UVM testbench and integrate on Vivado block design.</p>
+            <span class="card-cta upcoming-cta">Planned →</span>
+          </div>
+        </a>
+
+        <a href="projects/upcoming-pcb-fpga.html" class="project-card upcoming">
+          <div class="card-img-placeholder upcoming-placeholder"><span>🟢</span><p class="mono">FPGA Dev Board</p></div>
+          <div class="card-overlay">
+            <span class="card-tag upcoming-tag">Proposed · PCB</span>
+            <h3 class="card-title">Custom FPGA<br>Development Board</h3>
+            <p class="card-desc">Design a 4-layer PCB hosting an Artix-7 FPGA with SDRAM, GPIO, UART, and JTAG — showcasing PCB + FPGA skills together.</p>
+            <span class="card-cta upcoming-cta">Planned →</span>
+          </div>
+        </a>
+
+      </div>
+      <button class="carousel-btn next" onclick="scrollRow(this, 1)">›</button>
+    </div>
+    -->
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section class="skills-section" id="skills-section">
+    <p class="section-label mono">// TECHNICAL STACK</p>
+    <h2 class="section-title">What I Work With</h2>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-icon">◈</div>
+        <h4>FPGA &amp; HDL</h4>
+        <p class="mono skill-items">Verilog · HLS · Vivado · Intel Quartus · Xilinx · Zynq</p>
+      </div>
+      <div class="skill-block">
+        <div class="skill-icon">◈</div>
+        <h4>Embedded Systems</h4>
+        <p class="mono skill-items">ESP32 · PIC16F/18F · ARM · Arduino · Raspberry Pi · C/C++</p>
+      </div>
+      <div class="skill-block">
+        <div class="skill-icon">◈</div>
+        <h4>PCB &amp; Hardware</h4>
+        <p class="mono skill-items">KiCad · Multilayer PCB · Power Distribution · Signal Integrity</p>
+      </div>
+      <div class="skill-block">
+        <div class="skill-icon">◈</div>
+        <h4>Simulation &amp; Modeling</h4>
+        <p class="mono skill-items">MATLAB · Simulink · Simscape · LabVIEW · EIS Modeling</p>
+      </div>
+      <div class="skill-block">
+        <div class="skill-icon">◈</div>
+        <h4>Interfaces &amp; Protocols</h4>
+        <p class="mono skill-items">I²C · SPI · UART · AXI · GPIO · PWM · ADC/DAC</p>
+      </div>
+      <div class="skill-block">
+        <div class="skill-icon">◈</div>
+        <h4>CAD &amp; Design</h4>
+        <p class="mono skill-items">AutoCAD · Revit · SOLIDWORKS · Hardware Prototyping</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESEARCH SPOTLIGHT ═══ -->
+  <section class="research-section">
+    <div class="research-inner">
+      <div class="research-text">
+        <p class="section-label mono">// RESEARCH</p>
+        <h2 class="section-title">AFRL Research Scholar<br>— Solid State Batteries</h2>
+        <p class="about-body">
+          Summer 2025 at the Air Force Research Laboratory via Griffiss Institute. Built MATLAB/Simulink 
+          Simscape equivalent-circuit models from EIS data — extracting bulk/interfacial resistance, 
+          capacitance, and diffusion parameters. Fabricated and tested 20+ sensor-driven CR2032 coin cells, 
+          optimizing composite electrolytes for stability and reduced impedance.
+        </p>
+        <div class="about-tags">
+          <span>Electrochemical Impedance</span><span>Simscape</span><span>Solid-State Batteries</span><span>MATLAB</span>
+        </div>
+      </div>
+      <div class="research-img-col">
+        <!-- REPLACE: images/research_afrl.jpg with a photo from your AFRL research -->
+        <img src="images/research_afrl.jpg" alt="AFRL Research" class="research-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+     <!--   <div class="about-img-placeholder research-placeholder">
+          <span>🔬</span>
+          <p class="mono">research_afrl.jpg</p>
+          <p>Place AFRL lab photo in<br><code>images/research_afrl.jpg</code></p>
+        </div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact-section" id="contact">
+    <p class="section-label mono">// CONNECT</p>
+  <!--  <h2 class="contact-title">Open to Remote<br>FPGA Roles</h2>  -->
+    <p class="contact-sub">Available post-graduation (May 2027) · Open to any EE role · Will consider contract</p>
+    <div class="contact-links">
+      <a href="mailto:maestroyvan1@gmail.com" class="contact-btn">maestroyvan1@gmail.com</a>
+      <a href="https://linkedin.com/in/maestro-yvan" target="_blank" class="contact-btn">LinkedIn</a>
+      <a href="https://github.com/yvanembedded-cmd" target="_blank" class="contact-btn">GitHub</a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">YB<span class="dot">.</span></span>
+      <span class="mono footer-copy">© 2026 Yvan Brillant Bota</span>
+      <span class="mono footer-copy">Kennesaw State University · ECE</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
